@@ -6,8 +6,29 @@
     <title>Task Manager</title>
     <link href="./output.css" rel="stylesheet">
 </head>
-<body>
-    <div class="text-red-500">Hello World</div>
+<body class="bg-gray-100 min-h-screen py-8">
+    <!-- <div class="text-red-500">Hello World</div> -->
+     <div class="bg-white max-w-2xl mx-auto shadow-md rounded-lg p-6">
+        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800 ">
+            Task Manager
+        </h1>
+
+        <!-- add new task form  -->
+        <div class="mb-6 p-4 bg-blue-50 rounded-lg">
+            <h2 class="text-xl font-semibold text mb-4 text-blue-800">Add New Task</h2>
+            <div class="flex gap-2">
+                <input type="text" 
+                placeholder="Enter Task Title!"
+                class="flex-1 border border-gray-300 rounded-md px-3 py-2">
+                <button class="px-4 bg-blue-500 text-white rounded-md
+                hover:bg-blue-600">Add Task</button>
+            </div>
+        </div>
+
+        <!-- Task List  -->
+         <div class="space-y-3"></div>
+
+     </div>
     <script src="./index.js"></script>
 </body>
 </html>
