@@ -29,7 +29,7 @@ function fetchTasks(){
                     console.log(tasks);
                     renderTasks()
             }else{
-                console.log("Error");
+                console.log("Error!");
             }
         }
     };
@@ -38,7 +38,7 @@ function fetchTasks(){
 
 
 function renderTasks() {
-    const tasksList = document.getElementById("taskList");
+    const tasksList = document.getElementById("tasksList");
     if(tasks.length === 0){
         tasksList.innerHTML = 
         '<p class="text-center text-gray-500 py-8">No Task found. add your first task above!</p>';
@@ -48,8 +48,9 @@ function renderTasks() {
 
         return `<div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg border">
                 <div class="flex items-center gap-3 w-full">
-                    <input type="checkbox"
-                    class="flex-1 px-2 py-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"/>  
+                    <input 
+                    type="checkbox"
+                    class="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"/>  
                     <span>Title</span>
                 </div>
             <div class="flex items-center gap-2 pl-3">
