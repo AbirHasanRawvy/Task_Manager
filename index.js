@@ -51,7 +51,7 @@ function renderTasks() {
                     <input 
                     type="checkbox"
                     class="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"/>  
-                    <span>Title</span>
+                    <span>${task.title}</span>
                 </div>
             <div class="flex items-center gap-2 pl-3">
                 <button class="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors">Edit</button>
@@ -59,6 +59,7 @@ function renderTasks() {
             </div>
             </div>`;
 
-    });
+    })
+    .join("");
 }
 
