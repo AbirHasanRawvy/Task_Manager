@@ -36,6 +36,33 @@ function fetchTasks(){
     xhr.send();
 }
 
+function createTask(){
+    const taskInput = document.getElementById("taskInput");
+    const title = taskInput.value;
+    // console.log(title);
+    if(!title){
+        alert("Please enter a task title");
+        return;
+    }
+    const newTask = {
+        userId: 1,
+        title,
+        completed: false,
+    };
+    fetch(API_URL, {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify(newTask),
+    }).then((response) => {
+        if(!response.ok) throw new Error();
+        return response.json();
+    }).then((data)=>{
+        // console.log(data);
+        tasks.unshift(data);
+        renderTasks();
+    });
+}
+
 
 function renderTasks() {
     const tasksList = document.getElementById("tasksList");
@@ -54,7 +81,7 @@ function renderTasks() {
                     <span>${task.title}</span>
                 </div>
             <div class="flex items-center gap-2 pl-3">
-                <button class="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors">Edit</button>
+                <button class="px-3 py-1 bg-gray-100 text-balck text-sm rounded hover:bg-blue-700 transition-colors">Edit</button>
                 <button class="px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-600 transition-colors">Delete</button>
             </div>
             </div>`;
