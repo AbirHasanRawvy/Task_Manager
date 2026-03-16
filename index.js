@@ -64,6 +64,16 @@ function createTask(){
 }
 
 
+function deleteTask(id){
+    fetch(`${API_URL}/${id}`, {
+        method: "DELETE",
+    }).then((response)=> {
+        if (!response.ok) throw new Error();
+        tasks = tasks.filter((task)=> task.id !== id);
+        renderTasks();
+    });
+}
+
 function renderTasks() {
     const tasksList = document.getElementById("tasksList");
     if(tasks.length === 0){
@@ -82,7 +92,9 @@ function renderTasks() {
                 </div>
             <div class="flex items-center gap-2 pl-3">
                 <button class="px-3 py-1 bg-gray-100 text-balck text-sm rounded hover:bg-blue-700 transition-colors">Edit</button>
-                <button class="px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-600 transition-colors">Delete</button>
+                <button 
+                onclick="deleteTask(${task.id})"
+                class="px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-600 transition-colors">Delete</button>
             </div>
             </div>`;
 
