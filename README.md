@@ -1,7 +1,7 @@
 # Task_Manager
 JavaScript Object & JSON | Arrays and Array Methods | Strings and String Operations | JavaScript Date | Math | Number | Window object | Navigator object
 # Getting Started
-First run the developement server: From index.html click on Open With Live Server
+First run the developement server: From index.html click on Open With Live Server<br>
 Open:(http://127.0.0.1:5500/src/index.html)
 # Learn More
 To learn more about JavaScript take a look at the following resources:<br>
